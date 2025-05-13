@@ -11,7 +11,6 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navbar */}
       <nav className="bg-indigo-600 shadow-md">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <h1 className="text-white text-3xl font-semibold">My Blog</h1>
@@ -39,7 +38,6 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {/* Main */}
       <div className="max-w-5xl mx-auto px-6 py-12">
         <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">Welcome to My Blog</h1>
 
