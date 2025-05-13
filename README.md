@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Blog Application with Next.js, Prisma, PostgreSQL, and NextAuth
+Overview
+This project is a Blog application built with Next.js, using Prisma as the ORM to interact with a PostgreSQL database. It allows authenticated users to create, read, update, and delete blog posts (CRUD functionality). NextAuth is integrated to enable user authentication through Google sign-in.
 
-## Getting Started
+Features
+User Authentication: Google Sign-In via NextAuth.
 
-First, run the development server:
+CRUD Operations: Ability to create, read, update, and delete blog posts.
 
-```bash
+PostgreSQL Database: All data is stored in a PostgreSQL database using Prisma ORM.
+
+Protected Routes: Only authenticated users can create, update, or delete posts.
+
+Responsive Design: Optimized for use across various devices and screen sizes.
+
+Tech Stack
+Frontend: React, Next.js
+
+Backend: Next.js API Routes
+
+Database: PostgreSQL
+
+ORM: Prisma
+
+Authentication: NextAuth.js (Google Authentication)
+
+Styling: CSS (tailored to the app)
+
+Prerequisites
+To get started with this project, make sure you have the following installed:
+
+Node.js (v16 or above)
+
+PostgreSQL database installed and running
+
+Google Developer Console account for OAuth credentials
+
+Setup Instructions
+1. Clone the Repository
+First, clone this repository to your local machine:
+
+
+git clone https://github.com/your-username/blog-nextjs-prisma.git
+cd blog-nextjs-prisma
+2. Install Dependencies
+Run the following command to install the project dependencies:
+
+
+npm install
+3. Configure PostgreSQL Database
+Create a PostgreSQL database (you can use services like Heroku Postgres, or set it up locally).
+
+Update the .env file with your database connection URL. Example:
+
+
+DATABASE_URL="postgresql://username:password@localhost:5432/mydatabase?schema=public"
+Run the Prisma migration command to create the necessary database tables:
+
+npx prisma migrate dev --name init
+This will generate the necessary tables (User and Post) in your PostgreSQL database.
+
+4. Set Up Google Authentication (NextAuth)
+Go to the Google Developer Console.
+
+Create a new project and enable Google OAuth 2.0 API.
+
+Obtain your Client ID and Client Secret.
+
+Add the credentials to your .env file:
+
+
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your-nextauth-secret
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+5. Run the Application
+Once you’ve completed the above steps, you can run the application locally with:
+
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Visit http://localhost:3000 in your browser to see your blog application in action.
