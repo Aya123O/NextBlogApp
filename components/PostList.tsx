@@ -1,5 +1,13 @@
 'use client';
 import { useEffect, useState } from 'react';
+type Post = {
+  id: string;
+  title: string;
+  content: string;
+  user: {
+    name: string;
+  };
+};
 
 const PostList = () => {
   const [posts, setPosts] = useState([]);
