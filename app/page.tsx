@@ -18,7 +18,7 @@ export default function HomePage() {
             <a href="#home" className="text-white hover:text-indigo-300">Home</a>
             {session ? (
               <>
-                <span className="text-white">Hi, {session.user.name}</span>
+                <span className="text-white">Hi,{session?.user?.name}</span>
                 <button
                   onClick={() => signOut()}
                   className="ml-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full"
