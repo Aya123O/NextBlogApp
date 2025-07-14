@@ -10,7 +10,7 @@ type Post = {
 };
 
 const PostList = () => {
-  const [posts, setPosts] = useState([]);
+const [posts, setPosts] = useState<Post[]>([]);
   const [editingPostId, setEditingPostId] = useState(null);
   const [editTitle, setEditTitle] = useState('');
   const [editContent, setEditContent] = useState('');
